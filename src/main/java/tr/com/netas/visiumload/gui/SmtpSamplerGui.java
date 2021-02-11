@@ -20,7 +20,6 @@ package tr.com.netas.visiumload.gui;
 import java.awt.BorderLayout;
 import java.awt.Component;
 
-import org.apache.jmeter.gui.TestElementMetadata;
 import org.apache.jmeter.samplers.gui.AbstractSamplerGui;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.property.CollectionProperty;
@@ -31,7 +30,6 @@ import tr.com.netas.visiumload.VLSmtpSampler;
  * Class to build superstructure-gui for SMTP-panel, sets/gets value for a JMeter's testElement-object (i.e. also for save/load-purposes).
  * This class extends AbstractSamplerGui, therefor most implemented methods are defined by JMeter's structure.
  */
-@TestElementMetadata(labelResource = "smtp_sampler_title")
 public class SmtpSamplerGui extends AbstractSamplerGui {
 
     /**
@@ -54,7 +52,12 @@ public class SmtpSamplerGui extends AbstractSamplerGui {
      */
     @Override
     public String getLabelResource() {
-        return "smtp_sampler_title";
+        throw new IllegalStateException("This shouldn't be called"); //$NON-NLS-1$
+    }
+
+    @Override
+    public String getStaticLabel() {
+        return "VL SMTP Sampler";
     }
 
     /**
