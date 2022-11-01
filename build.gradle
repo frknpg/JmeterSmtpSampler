@@ -4,14 +4,12 @@ plugins {
 
 group 'tr.com.netas.visiumload'
 version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 version = '1.17'
 def title = 'VloadSmtpSampler'
 def jmeterVersion = '5.3'
-
-compileJava {
-    options.release = 8
-}
 
 def withoutBom = {
     exclude group: 'org.apache.jmeter', module: 'bom'
